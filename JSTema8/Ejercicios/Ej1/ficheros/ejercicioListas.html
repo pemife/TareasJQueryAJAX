@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+	<head>
+
+		<meta charset="utf-8">
+		<title> Listas desplegables encadenadas - json </title>
+
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<script type="text/javascript">
+
+			window.onload = function(){
+
+				$.getJSON("cargaProvinciasJSON.php", function(data){
+					var toAppend = '';
+					$.each(data, function(key, val){
+						toAppend += '<option value=' + key + ' >' + val + '</option>';
+					})
+					$("#provincia").append(toAppend);
+				});
+
+				$("#provincia").change(function(){
+
+					var provincia = "provincia="+$("#provincia option:selected").val();
+
+					$.post("cargaMunicipiosJSON.php", provincia, function(data){
+						var toAppend = '';
+						data = JSON.parse(data);
+						$.each(data, function(key, val){
+							toAppend += '<option value=' + key + ' >' + val + '</option>';
+						});
+						$("#municipio").append(toAppend);
+					});
+				});
+			}
+
+
+			function ordenar(){
+				$("select").each(function(index,elem) {
+				    //guardamos la opción seleccionada
+
+				    var listaActual = elem;
+				    var sel = listaActual.selectedIndex;
+
+				    // Aplicacion del orden alfabetico
+				    $(listaActual).html($("option", $(this)).sort(function(a, b) {
+				      //  return a.text == b.text ? 0 : a.text < b.text ? -1 : 1 //ordena por texto
+				          return a.value == b.value ? 0 : a.value < b.value ? -1 : 1 //ordena por atributo value
+				    }));
+
+				    // Reestablecemos la opción seleccionada previamente
+					$(listaActual).prop('selectedIndex', sel); //listaActual.selectedIndex = sel;
+
+				});
+			}
+
+
+		</script>
+	</head>
+
+	<body>
+		<h1>Listas desplegables encadenadas</h1>
+
+		<form>
+		  <label for="provincia">Provincia</label>
+		  <select id="provincia">
+				<option>-selecciona-</option>
+		  </select>
+		  <br/><br/>
+		  <label for="municipio">Municipio</label>
+		  <select id="municipio">
+				<option>-selecciona una provincia-</option>
+		  </select>
+		</form>
+
+	</body>
+</html>

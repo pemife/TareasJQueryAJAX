@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script type="text/javascript">
+		window.onload = function(){
+			$("button").on('click', function(){
+
+				$.get("pluginfile.php", function(ciclo){
+
+          console.log(ciclo);
+          var toAppend = "";
+
+					$.each(ciclo, function(i, curso){
+
+            toAppend += `<ul><h3><li>${i+1}º DAW</li></h3>`;
+            toAppend += `<ul>`;
+
+            $.each(curso, function(i, alumno){
+
+              toAppend += `<li>Nombre : ${alumno.nombre} `+
+                                `- Dni: ${alumno.dni} `+
+                            `- Acceso : ${alumno.acceso}</li>`;
+
+            });
+            toAppend += `</ul>`;
+            toAppend += "</ul>";
+					});
+          $("div.cursos").append(toAppend);
+				});
+			});
+		}
+	</script>
+</head>
+<body>
+	<button class="verCursos">Ver Cursos</button>
+	<div class="cursos">
+
+	</div>
+</body>
+</html>

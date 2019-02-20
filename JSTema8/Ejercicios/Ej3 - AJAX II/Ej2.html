@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script type="text/javascript">
+		window.onload = function(){
+			$("button").on('click', function(){
+
+				// Recojo el valor del input text cuando se pulsa el boton
+				var cursoNombre = $("input[name='nombreCurso']").val();
+
+				$.get("pluginfile.php", function(ciclo){
+
+					var cicloNumero;
+					// si cursoNombre == 1DAW -> cicloNumero = 0
+					// si cursoNombre == 2DAW -> cicloNumero = 1
+					// si cursoNombre == XXXX -> cicloNumero = false
+          cursoNombre == "1DAW" ? cicloNumero = 0 :	cursoNombre == "2DAW" ?	cicloNumero = 1 : cicloNumero = 2;
+
+					// creo un string que rellenare con los datos de los alumnos y el ciclo
+					var toAppend;
+
+					// Se ejecutara todo lo demas, siempre que haya un nombre de curso valido
+					if(cicloNumero != 2){
+
+						// Vacío el string por si tenia algun valor anteriormente
+						toAppend = "";
+
+						toAppend += `<ul><h3><li>${cicloNumero+1}º DAW</li></h3>`;
+						toAppend += `<ul>`;
+
+						// Por cada alumno en el ciclo, cargo sus datos en el string creado anteriormente
+						$.each(ciclo[cicloNumero], function(i, alumno){
+
+							toAppend += `<li>Nombre : ${alumno.nombre} `+
+							`- Dni: ${alumno.dni} `+
+							`- Acceso : ${alumno.acceso}</li>`;
+
+						});
+						toAppend += `</ul>`;
+						toAppend += "</ul>";
+					}else {
+						// Mensaje de error
+						toAppend = "<h3>Introduzca un nombre de curso válido</h3>";
+					}
+
+					// Cargo el string en el div de cursos
+          $("div.cursos").html(toAppend);
+				});
+			});
+		}
+	</script>
+</head>
+<body>
+	<label for="cursos">
+		<p>Introduzca el curso que desea consultar:</p>
+		<input type="text" name="nombreCurso">
+		<button class="verCursos">Ver Cursos</button>
+	</label>
+	<div class="cursos">
+
+	</div>
+</body>
+</html>

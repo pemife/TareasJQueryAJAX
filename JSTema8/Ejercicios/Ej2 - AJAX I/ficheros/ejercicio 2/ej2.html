@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script type="text/javascript">
+		window.onload = function(){
+			$("button").on('click', function(){
+
+				$.get("servidor.php", function(tours){
+
+					// Por cada tour, cargo en el div correspondiente el nombre
+					// en la etiqueta de clase nombre, y el precio en la etiqueta de clase precio
+					$.each(tours, function(i, tour){
+						$("div.tour-" + i + " > .name").html(tour.name);
+						$("div.tour-" + i + " > .price").html(tour.price);
+					});
+				});
+			});
+		}
+	</script>
+</head>
+<body>
+	<button>Mostrar tours</button>
+	<h2>Tours actuales</h2>
+	<div class="tour-0">
+	  <h3 class="name"></h3>
+	  <p class="price"></p>
+	</div>
+
+	<div class="tour-1">
+	  <h3 class="name"></h3>
+	  <p class="price"></p>
+	</div>
+
+	<div class="tour-2">
+	  <h3 class="name"></h3>
+	  <p class="price"></p>
+	</div>
+
+</body>
+</html>

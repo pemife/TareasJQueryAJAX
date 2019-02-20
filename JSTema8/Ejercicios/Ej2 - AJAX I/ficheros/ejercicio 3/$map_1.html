@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script type="text/javascript">
+		window.onload = function(){
+			$("button").on('click', function(){
+
+				// Recojo los datos de los vuelos
+				$.get("servidor.php", function(data){
+					var toAppend = "";
+
+					$.each(data, function(i, item){
+
+						// por cada vuelo añado una linea con el numero, y la hora
+						toAppend = `<li>${item.flightNumber}-${item.time}</li>`;
+						$("ul.flight-times").append(toAppend);
+					});
+				});
+			});
+		}
+	</script>
+</head>
+<body>
+	<button class="update-available-flights">Ver vuelos</button>
+	<div class="flights">
+	  <ul class="flight-times">
+
+	  </ul>
+	</div>
+
+</body>
+</html>
