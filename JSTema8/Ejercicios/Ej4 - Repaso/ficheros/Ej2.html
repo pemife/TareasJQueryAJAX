@@ -7,12 +7,28 @@
     <script type="text/javascript">
       $(() => {
 
+        // Cargo las personas
+        $.getJSON('personas.php', function(personas){
+
+          $("#erdi").append('<label for="personas">Grupo de clientes </label>');
+
+          // Por cada persona que devuelve el servidor, creo un  nuevo input
+          // radio, lo inserto en el div, y le asigno un evento click con
+          // los datos de la persona.
+          $.each(personas, function(i, persona){
+            $("#erdi").append(`</br><input name="personas" type="radio" id="persona${persona.id}">${i}`);
+
+            $("#persona"+i).on("click", function(){
+              alert("Nombre: " + persona.nombre + " Dni: " + persona.dni);
+            });
+          });
+        });
       });
     </script>
   </head>
   <body>
     <div id="erdi">
-      
+
     </div>
   </body>
 </html>
