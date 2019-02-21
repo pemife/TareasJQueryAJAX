@@ -5,10 +5,31 @@
     <title>Adiosos</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script type="text/javascript">
-      
+      $(() => {
+
+        $.ajax({
+          url: "jquery.png",
+          success: function(img){
+            intervalo = setInterval(function(){ apeImg(img);}, 1000);
+          }
+        });
+
+        $("#botonMostrar").on("click", function(){
+          clearInterval(intervalo);
+        });
+
+      });
+
+      function apeImg(img){
+        $("#erdi").append(img);
+      }
     </script>
   </head>
   <body>
+    <button id="botonMostrar">Mostrar</button>
+    <button id="botonOcultar">Ocultar</button>
+    <div id="erdi">
 
+    </div>
   </body>
 </html>
