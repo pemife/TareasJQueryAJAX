@@ -48,7 +48,14 @@
 			$("p:contains('Modulos de primero') + ul > li:contains('Base de Datos')").after("<li>Sistemas Informaticos</li>");
 
 			//k
-			$("p:contains('Modulos de segundo') + ul>li>ul").attr("data-hours"); 
+			$("p:contains('Modulos de segundo') + ul>li>ul").children().on("click", function(){
+				$(this).find("ul").append(`<li>Horas semanales: ${$(this).find("ul").attr("data-hours")}</li>`);
+			});
+
+			// Solucion de un compañero de clase
+			// $("ul:eq(1)").children().on("click",function(){
+			// 	$(this).find("ul").append(`<li>Horas semanales: ${$(this).find("ul").attr("data-hours")}</li>`);
+			// });
 
 		});
 	</script>
