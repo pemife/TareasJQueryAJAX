@@ -6,12 +6,57 @@
 		.azul {color:blue;}
 		.borde {border:2px solid;}
 	</style>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script type="text/javascript">
+		$(() => {
+			//a
+			var regex = new RegExp("(Primero|Segundo)");
 
+			$("p").filter(function () {
+			    return regex.test($(this).text());
+			}).addClass("borde");
+
+			//b
+			$("p:contains('Segundo') + ul > li").addClass("verde");
+
+			//c
+			$(".borde").removeClass("borde");
+
+			//d
+			$("p").filter(function () {
+			    return regex.test($(this).text());
+			}).on("click", function(){
+				$(this).addClass("borde");
+			});
+
+			//e
+			$("p:contains('Primero')").html("Modulos de primero");
+
+			//f
+			$("p:contains('Segundo')").html("Modulos de segundo");
+
+			//g
+			$("li:empty").remove();
+
+			//h
+			$("p:contains('Modulos de primero') + ul").append("<li>FOL</li>");
+
+			//i
+			$("p:contains('Modulos de primero') + ul").prepend("<li>Programacion</li>");
+
+			//j
+			$("p:contains('Modulos de primero') + ul > li:contains('Base de Datos')").after("<li>Sistemas Informaticos</li>");
+
+			//k
+			$("p:contains('Modulos de segundo') + ul>li>ul").attr("data-hours"); 
+
+		});
+	</script>
 </head>
 <body>
 	<p>Primero</p>
 	<ul>
-		
+
 		<li>Base de Datos</li>
 		<li>Lenguajes de Marcas</li>
 		<li></li>
@@ -22,31 +67,31 @@
 		<li >DWESE
 			<ul data-hours='10'>
 				<li class='azul' >Desarrollo Web en Entorno Servidor</li>
-				
+
 			</ul>
 		</li>
 		<li>DWECL
 			<ul data-hours='7'>
 				<li class='azul'>Desarrollo Web en Entorno Cliente</li>
-				
+
 			</ul>
 		</li>
 		<li>DAW
 			<ul data-hours='3'>
 				<li class='azul'>Despliegue de Aplicaciones Web</li>
-				
+
 			</ul>
 		</li>
 		<li>DIWEB
 			<ul data-hours='6'>
-				<li class='azul'>Diseño de Interfaces Web</li>
-				
+				<li class='azul'>Dise&ntilde;o de Interfaces Web</li>
+
 			</ul>
 		</li>
 		<li>EIE
 			<ul data-hours='4'>
 				<li class='azul'>Entorno e Iniciativa Empresarial</li>
-				
+
 			</ul>
 		</li>
 	</ul>

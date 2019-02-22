@@ -8,7 +8,10 @@
       $(() => {
         $("#texto").on('keyup', function(){
           var escrito = $(this).val();
-          $("#erdi").load('autocompletar.php', `q=${escrito}`);
+          // $("#erdi").load('autocompletar.php', `q=${escrito}`);
+          $.get('autocompletar.php', `q=${escrito}`, function(pista){
+            $("#erdi").html(pista);
+          });
         });
       });
     </script>

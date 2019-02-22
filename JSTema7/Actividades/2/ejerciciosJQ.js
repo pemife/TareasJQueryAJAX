@@ -27,7 +27,7 @@ $(document).ready(function(){
   // $("[href$='.html']").css({'fontFamily': 'helvetica', 'color': 'red'});
 
   //j
-  $("p:contains('segundo')").siblings().css({'fontFamily': 'helvetica', 'color': 'red'});
+  // $("p:contains('segundo')").siblings().css({'fontFamily': 'helvetica', 'color': 'red'});
   // $('ul>li>ul').find('li:eq(1)');        //Solucion de Gallego
-  
+
 });
