@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style media="screen">
+      div {
+        background-color: gray;
+      }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script type="text/javascript">
+      $(() => {
+        // Ej1
+        // $('body').append('<div id="erdi"></div>');
+        // $('#erdi').css({'height': '800px', 'width': '70px'});
+        // $('#erdi').on('click',function(e){
+        //     e.preventDefault();
+        //     $('p').remove();
+        //     $(this).css({'height': '250px', 'width': '250px'});
+        //     $(this).after(`<p> left: ${$('#erdi').position().left}, top: ${$('#erdi').position().top}. 'height': '250px', 'width': '250px'</p>`);
+        // });
+        // $('#erdi').on('dblclick',function(e){
+        //     e.preventDefault();
+        //     $('p').remove();
+        //     $(this).css({'height': '800px', 'width': '70px'});
+        //     $(this).after(`<p> left: ${$('#erdi').position().left}, top: ${$('#erdi').position().top}. 'height': '800px', 'width': '70px'</p>`);
+        // });
+
+        // Ej2
+        // $('body').append('<div id="erdi"></div>');
+        // $('#erdi').css({'height': '350px', 'width': '350px', 'position': 'relative', 'left': '100px'});
+        // $('#erdi').on('click',function(e){
+        //   e.preventDefault();
+        //   $(this).after(`<button id="botonMover" type="button" name="button">Ej2</button>`);
+        //   $('#botonMover').click(function(){
+        //     $('#erdi').css({'height': `${$('#erdi').height()-150}px`,
+        //     'width': `${$('#erdi').width()-150}px`, 'left': `${$('#erdi').position().left-100}px`});
+        //     console.log($('#erdi').position().left);
+        //     // lo muestro por consola
+        //   });
+        // });
+
+        // Ej3.1
+        // $('body').append('<div id="erdi"></div>');
+        // $('#erdi').css({'height': '350px', 'width': '350px', 'position': 'relative', 'left': '100px'});
+        // $('#erdi').after(`<button id="botonAumentar" type="button" name="button">Aumentar</button>`);
+        // $('#erdi').after(`<button id="botonMinimizar" type="button" name="button">Minimizar</button>`);
+        // $('#botonAumentar').click(function(){
+        //     $('#erdi').css({'height': `${$('#erdi').height()+100}px`,
+        //     'width': `${$('#erdi').width()+100}px`});
+        // });
+        // $('#botonMinimizar').click(function(){
+        //     $('#erdi').css({'height': `${$('#erdi').height()-50}px`,
+        //     'width': `${$('#erdi').width()-50}px`});
+        // });
+
+        // Ej3.2
+        // $('body').append('<div id="erdi"></div>');
+        // $('#erdi').css({'height': '350px', 'width': '350px', 'position': 'relative', 'left': '100px'});
+        // $('#erdi').after(`<button id="botonAumentar" type="button" name="button">Aumentar</button>`);
+        // $('#erdi').after(`<button id="botonMinimizar" type="button" name="button">Minimizar</button>`);
+        // $('#botonAumentar').click(function(){
+        //     $('#erdi').animate({height: "+=100", width: "+=100"});
+        // });
+        // $('#botonMinimizar').click(function(){
+        //     $('#erdi').animate({height: "-=50", width: "-=50"});
+        // });
+
+        // Diferencias: En ambas, el cambio de las propiedades es instantaneo,
+        // pero con animate, el cambio visual se hace suavemente.
+
+        // Ej4
+        // $('body').append('<div id="erdi"></div>');
+        // $('#erdi').css({'height': '350px', 'width': '350px', 'position': 'relative', 'left': '100px'});
+        // $('#erdi').after(`<button id="boton" type="button" name="button">Aumentar</button>`);
+        // $('#erdi').after(`<button id="boton1" type="button" name="button">Minimizar</button>`);
+        // function comprobarPosicion(){
+        //   var posicion;
+        //   do {
+        //     posicion=prompt('Dimensiones a modificar')
+        //   } while (posicion<=0);
+        //   return posicion;
+        // }
+        // $('#boton').click(function(){
+        //   var pos=comprobarPosicion();
+        //   $('#erdi').animate({height: `+=${pos}`, width: `+=${pos}`});
+        // });
+        // $('#boton1').click(function(){
+        //   var pos=comprobarPosicion()
+        //   $('#erdi').animate({height: `-=${pos}`, width: `-=${pos}`});
+        // });
+
+        // Ej5
+        // $('body').append('<div id="erdi"></div>');
+        // $('#erdi').css({'height': '350px', 'width': '350px', 'position': 'relative', 'left': '100px'});
+        // $('#erdi').hide(100);
+        // $('#erdi').show(200);
+
+        // Ej6
+        // $('body').append('<div id="erdi"></div>');
+        // $('#erdi').css({'height': '350px', 'width': '350px', 'position': 'relative', 'left': '100px'});
+        // $('#erdi').hide(100);
+        // setTimeout(function(){$('#erdi').show(200)},2000);
+
+        // Ej7
+        // $('body').append('<div id="erdi">Texto de ejemplo</div>');
+        // $('#erdi').css({'height': '350px', 'width': '350px', 'position': 'relative', 'left': '100px'});
+        // $('#erdi').after(`<button id="boton" type="button" name="button">Sembrar Discordia</button>`);
+        // $('#boton').click(function(){
+        //   $('#erdi').animate({left: "+=100"});
+        //   $('#erdi').css({'font-size': "+=30px"});
+        // });
+      });
+
+    </script>
+  </head>
+  <body>
+
+  </body>
+</html>

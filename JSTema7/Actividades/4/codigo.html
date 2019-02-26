@@ -1,64 +1,107 @@
 <html>
 <head>
-	<title></title>
-	<style type="text/css">
+  <title></title>
+  <style type="text/css">
 
-		/* p + ul {
-			display: none;
-		}
+    p + ul {
+      display: none;
+    }
 
-		.fondo{background-color: grey} */
+    .fondo{background-color: grey}
+  </style>
+  <script src="../jquery.js" charset="utf-8"></script>
+  <script type="text/javascript">
+    $(() => {
+      // Ej1
+		  // alert(`${$("ul li").length - $("ul li[class]").length - $("ul li:empty").length} cursos componen el ciclo.`);
 
-	</style>
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-	<script type="text/javascript">
-		$(() =>{
-			$("p:contains('Primero')+ul>li").css({'fontFamily': 'helvetica', 'color': 'red'});
-		});
-	</script>
+      // Ej2
+  		// $("p").hover(function(){
+  		// 	$(this).next().fadeIn(2000);
+  		// 	$(this).next().fadeOut(2000);
+  		// });
+
+      // Ej3
+	    // $(window).on('keydown', function(e){
+      //   if(e.key == 'ArrowDown'){
+      //     $('p').next().show();
+      //   }else if (e.key == 'ArrowUp') {
+      //     $('p').next().hide();
+      //   }
+	    // });
+
+		  // Ej4
+  		// $(window).keypress(function(e){
+  		// 	if (e.key == 'Enter') {
+  		// 		$('p').next().css('display') == 'none'?$('p').next().show():$('p').next().hide();
+  		// 	}
+		  // });
+
+  		// Ej5
+  		// $(window).on('keydown', function(){});
+
+  		// Ej6
+  		// $(window).keypress(function(e){
+  		//  $(window).off('keypress');
+  		// 	if (e.key == 'Enter') {
+  		// 		$('p').next().css('display') == 'none'?$('p').next().show():$('p').next().hide();
+  		// 	}
+  		// });
+
+		  // Ej7
+      // $('li').hover(function(e){
+      //   $("#elemHover").remove();
+      //   var elemento=$(`<p id="elemHover">${$(this).parent().attr('data-hours')} horas</p>`);
+      //   $(document.body).append(elemento);
+      //   elemento.css({'position':'absolute','top':`${e.pageY}px`,'left':`${e.pageX}px`,
+      //   'background-color':'grey','z-index':'2'});
+      // });
+
+  		// Ej8
+  		// $('li').on('click', function(e){
+      //   $("#elemClick").remove();
+      //   var elemento=$(`<p id="elemClick">${$(this).parent().attr('data-hours')} horas</p>`);
+      //   $(document.body).append(elemento);
+      //   elemento.css({'position':'absolute','top':`${e.pageY}px`,'left':`${e.pageX}px`,
+      //   'background-color':'grey','z-index':'2'});
+  		// });
+    });
+  </script>
 </head>
 <body>
-	<p>Primero</p>
-	<ul>
-
-		<li>Base de Datos</li>
-		<li>Lenguajes de Marcas</li>
-		<li></li>
-	</ul>
-
-	<p>Segundo</p>
-	<ul>
-		<li >DWESE
-			<ul data-hours='10'>
-				<li class='azul' >Desarrollo Web en Entorno Servidor</li>
-
-			</ul>
-		</li>
-		<li>DWECL
-			<ul data-hours='7'>
-				<li class='azul'>Desarrollo Web en Entorno Cliente</li>
-
-			</ul>
-		</li>
-		<li>DAW
-			<ul data-hours='3'>
-				<li class='azul'>Despliegue de Aplicaciones Web</li>
-
-			</ul>
-		</li>
-		<li>DIWEB
-			<ul data-hours='6'>
-				<li class='azul'>Diseño de Interfaces Web</li>
-
-			</ul>
-		</li>
-		<li>EIE
-			<ul data-hours='4'>
-				<li class='azul'>Entorno e Iniciativa Empresarial</li>
-
-			</ul>
-		</li>
-	</ul>
-
+    <p>Primero</p>
+    <ul>
+        <li>Base de Datos</li>
+        <li>Lenguajes de Marcas</li>
+        <li></li>
+    </ul>
+    <p>Segundo</p>
+    <ul>
+        <li>DWESE
+            <ul data-hours='10'>
+                <li class='azul'>Desarrollo Web en Entorno Servidor</li>
+            </ul>
+        </li>
+        <li>DWECL
+            <ul data-hours='7'>
+                <li class='azul'>Desarrollo Web en Entorno Cliente</li>
+            </ul>
+        </li>
+        <li>DAW
+            <ul data-hours='3'>
+                <li class='azul'>Despliegue de Aplicaciones Web</li>
+            </ul>
+        </li>
+        <li>DIWEB
+            <ul data-hours='6'>
+                <li class='azul'>Diseño de Interfaces Web</li>
+            </ul>
+        </li>
+        <li>EIE
+            <ul data-hours='4'>
+                <li class='azul'>Entorno e Iniciativa Empresarial</li>
+            </ul>
+        </li>
+    </ul>
 </body>
 </html>

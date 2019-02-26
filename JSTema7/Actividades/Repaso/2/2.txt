@@ -1,0 +1,18 @@
+.prop()
+Get the value of a property for the first element in the set
+of matched elements or set one or more properties for every matched element.
+
+"Recoge el valor de una propiedad en el primer elemento de un set
+de elementos coincidentes, o establece una o mas propiedades de los elementos
+coincidentes."
+
+
+.attr()
+Get the value of an attribute for the first element in the set of matched
+elements or set one or more attributes for every matched element.
+
+"Recoge el valor de un atributo del primer elemento de los coincidentes,
+o establece uno o mas atributos por cada coincidente".
+
+
+Basicamente realizan la misma funcion.
