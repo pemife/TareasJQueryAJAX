@@ -2,20 +2,25 @@
 <head>
 	<title></title>
 	<style type="text/css">
-	/*
-		p + ul {
+
+		/* p + ul {
 			display: none;
 		}
-	*/
-	/*	.fondo{background-color: grey}*/
+
+		.fondo{background-color: grey} */
 
 	</style>
-	
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script type="text/javascript">
+		$(() =>{
+			$("p:contains('Primero')+ul>li").css({'fontFamily': 'helvetica', 'color': 'red'});
+		});
+	</script>
 </head>
 <body>
 	<p>Primero</p>
 	<ul>
-		
+
 		<li>Base de Datos</li>
 		<li>Lenguajes de Marcas</li>
 		<li></li>
@@ -26,31 +31,31 @@
 		<li >DWESE
 			<ul data-hours='10'>
 				<li class='azul' >Desarrollo Web en Entorno Servidor</li>
-				
+
 			</ul>
 		</li>
 		<li>DWECL
 			<ul data-hours='7'>
 				<li class='azul'>Desarrollo Web en Entorno Cliente</li>
-				
+
 			</ul>
 		</li>
 		<li>DAW
 			<ul data-hours='3'>
 				<li class='azul'>Despliegue de Aplicaciones Web</li>
-				
+
 			</ul>
 		</li>
 		<li>DIWEB
 			<ul data-hours='6'>
 				<li class='azul'>Diseño de Interfaces Web</li>
-				
+
 			</ul>
 		</li>
 		<li>EIE
 			<ul data-hours='4'>
 				<li class='azul'>Entorno e Iniciativa Empresarial</li>
-				
+
 			</ul>
 		</li>
 	</ul>
